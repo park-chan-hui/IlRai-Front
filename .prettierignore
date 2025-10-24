@@ -1,0 +1,20 @@
+# 빌드 결과물
+**/dist
+**/build
+**/.next
+**/out
+
+# 의존성
+**/node_modules
+**/pnpm-lock.yaml
+
+# 자동 생성 파일
+**/*.min.js
+**/*.min.css
+
+# 설정 파일들
+**/tsconfig.json
+**/package.json
+
+# 기타
+**/.git
