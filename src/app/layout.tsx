@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className="p-sm antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <div className="p-sm mx-auto max-w-[1280px]">{children}</div>
+      </body>
     </html>
   );
 }
