@@ -3,12 +3,14 @@
 import { Button } from '@/components/common/Button';
 import Card from '@/components/common/Card';
 import { Modal } from '@/components/common/Modal';
-import Category from '@/components/common/Category'; // New import
+import Category from '@/components/common/Category';
+import Dropdown from '@/components/common/Dropdown';
 import { useState } from 'react';
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('전체'); // New state for active category
+  const [activeCategory, setActiveCategory] = useState('전체');
+  const [selectedDropdown, setSelectedDropdown] = useState('선택해주세요');
 
   return (
     <div className="gap-2xs flex min-h-screen flex-col">
@@ -45,15 +47,29 @@ export default function Home() {
             isActive={activeCategory === categoryName}
             onClick={() => {
               setActiveCategory(categoryName);
-              console.log(`${categoryName} 카테고리 선택됨`);
             }}
           >
             {categoryName}
           </Category>
         ))}
       </div>
+      <div>
+        <h2 className="mb-4 text-xl font-bold">드롭다운 예시</h2>
+        <div className="flex justify-end">
+          <Dropdown
+            options={[
+              '1막: 에기르',
+              '2막: 아브렐슈드',
+              '3막: 모르둠',
+              '4막: 아르모체',
+              '종막: 카제로스',
+            ]}
+            selectedOption={selectedDropdown}
+            onSelect={setSelectedDropdown}
+          />
+        </div>
+      </div>
 
-      {/* Existing Card usage */}
       <Card>
         <div>helloworld</div>
         <div>helloworld</div>
